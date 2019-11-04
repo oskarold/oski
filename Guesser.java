@@ -1,7 +1,6 @@
 package inlämning;
 
-import java.io.Console;
-import java.util.Scanner;
+import java.util.Objects;
 
 public class Guesser {
 	private int low;
@@ -38,20 +37,12 @@ public class Guesser {
 		System.out.println("Please answer T for true, and F for false.\n");
 	}
 
-	/*
-	 * Task 3. Complete the code for the getReply() method. In the current version
-	 * below, it returns null each call, which is not what this method is supposed
-	 * to do.
-	 * 
-	 * Instead, change the method so that it reads a reply from the player, and if
-	 * it is "T" or "F", we have a valid reply. Return the String that you read from
-	 * the player.
-	 */
+	
 	private String getReply() {
 		String reply;
 		reply = System.console().readLine();
 
-		while (reply != "t" && reply != "f" && reply != null) {
+		while (Objects.equals(reply, "F") && Objects.equals(reply, "F")) {
 			System.out.println("One of T and F");
 			reply = System.console().readLine();
 		}
